@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proy-crud-prodructos</title>
+    <link rel="stylesheet" href="css/tailwind.min.css">
+</head>
+
+<body class="min-h-100 bg-gray-200">
+    <div class="md:flex min-h-screen md:align-top">
+        <aside class="md:w-2/5 lg:w-2/5 xl:w-1/5 bg-teal-600 px-5 py-10">
+            <p>
+                <img src="https://i.pinimg.com/originals/8c/50/72/8c507224d7172b6b4e3e20cdec599235.png" alt="yamilaIMG "
+                    width="200" height="200">
+            </p>
+            <h1 class="uppercase text-white tracking-wide text-2xl  font-bold mt-2">CRUD PRODUCTOS SPRINGBOOT MONGODB
+            </h1>
+            <p class="mt-10 text-white">ALUMNES CODO A CODO JAVAFULLSTAC comision 2011</p>
+
+            <p class="mt-10 text-white">Administra tus productos- JSONServer</p>
+            <nav class="mt-8">
+                <a href="/"
+                    class="px-3 py-1 text-white block hover:bg-teal-700 hover:text-yellow-400 bg-teal-700">Productos</a>
+                <a href="nuevo-producto.html"
+                    class="px-3 py-1 text-white block hover:bg-teal-900 mt-2 hover:text-yellow-400">Nuevo Producto</a>
+            </nav>
+        </aside>
+        <!--sidebar-->
+        <main class="md:w-3/5  xl:w-4/5 px-5 py-10 bg-gray-200">
+            <h1 class="text-3xl font-light text-center">Nuevo Producto</h1>
+
+            <div class="flex flex-col mt-10 items-center">
+                <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 w-10/12 md:w-8/12 lg:w-6/12">
+                    <div class=" shadow overflow-hidden sm:rounded-lg border-b border-gray-200 ">
+                        <form id="formulario" class="bg-white p-3" method="POST">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Nombre</label>
+                                <input
+                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="nombre" name="nombre" type="text" placeholder="Nombre Producto" />
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2"
+                                    for="descripcion">Descripcion</label>
+                                <input
+                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="descripcion" name="descripcion" type="text" placeholder="Decripcion Producto" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="marca">Marca</label>
+                                <input
+                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="marca" name="marca" type="text" placeholder="Marca Producto" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="precio">Precio
+                                    Producto</label>
+                                <input
+                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="precio" name="precio" type="number" step="0.01" placeholder="Precio Producto" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="cantidad">Cantidad</label>
+                                <input
+                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="cantidad" name="cantidad" type="number" placeholder="Cantidad Productos" />
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="rubro">Rubro</label>
+                                <input
+                                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                    id="rubro" name="rubro" type="text" placeholder="Rubro" />
+                            </div>
+                            <input type="submit"
+                                class="bg-teal-600 hover:bg-teal-900 w-full mt-5 p-2 text-white uppercase font-bold"
+                                value="Agregar PRODUCTO" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/nuevoProducto.js" type="module"></script>
+</body>
+
+</html>
