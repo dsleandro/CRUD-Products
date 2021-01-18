@@ -8,6 +8,7 @@ import com.dsleandro.ecommerce.repository.ProductRepository;
 import com.dsleandro.ecommerce.service.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service("productService")
@@ -33,6 +34,10 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public Product save(Product entity) {
 
+		String loggedUser = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		entity.setUser(loggedUser);
+
 		Product product = null;
 
 		try {
@@ -45,12 +50,12 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<Product> findAll() {
+	public List<Product> findAll(String username) {
 
 		List<Product> productList = new ArrayList<Product>();
 
 		try {
-			productList = productRepository.findAll();
+			productList = productRepository.findByUser(username);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

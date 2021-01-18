@@ -10,7 +10,7 @@ public interface ProductService {
 
 	public abstract Product save(Product entity);
 
-	public abstract List<Product> findAll();
+	public abstract List<Product> findAll(String username);
 
 	public abstract Product update(Product entity);
 

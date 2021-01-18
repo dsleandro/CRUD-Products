@@ -14,27 +14,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "products")
-public class Product implements Serializable {
+@Document(collection = "users")
+public class User implements Serializable {
 
-	private static final long serialVersionUID = -7109299225386324228L;
+    private static final long serialVersionUID = 434732343404132333L;
 
-	@Id
-	@MongoId(value = FieldType.OBJECT_ID)
-	private String id;
+    @Id
+    @MongoId(value = FieldType.OBJECT_ID)
+    private String id;
 
-	private String name;
+    private String username;
 
-	private String description;
-
-	private String brand;
-
-	private Double price;
-
-	private Integer quantity;
-
-	private String area;
-
-	private String user;
-
+    private String password;
 }
