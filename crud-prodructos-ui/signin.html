@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <link rel="stylesheet" href="css/tailwind.min.css">
+    <link rel="stylesheet" href="css/authForm.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h3>Iniciar Sesión</h3>
+
+        <form method="POST" class="authForm" id="signinForm">
+            <input type="text" name="username" id="signinUsername"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" autocomplete="username"
+                placeholder="Username">
+
+            <input type="password" name="password" id="signinPassword"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" autocomplete="current-password"
+                placeholder="Password">
+
+            <input type="submit" value="Entrar"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </form>
+    </div>
+
+    <div class="AuthFormLink"><a href="signup.html">Ir a Registrarse</a></div>
+
+    <script src="js/authForms.js" type="module"></script>
+</body>
+
+</html>

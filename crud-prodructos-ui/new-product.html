@@ -1,30 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>crud-prodructos</title>
+    <title>Nuevo prodructo</title>
     <link rel="stylesheet" href="css/tailwind.min.css">
+    <script>
+        const accessToken = localStorage.getItem("accessToken");
+
+        if (accessToken == null) {
+            window.location.href = 'signin.html';
+        }
+
+        function logout() {
+            localStorage.removeItem("accessToken");
+            window.location.href = 'signin.html'
+        }
+    </script>
 </head>
 
 <body class="min-h-100 bg-gray-200">
     <div class="md:flex min-h-screen md:align-top">
         <aside class="md:w-2/5 lg:w-2/5 xl:w-1/5 bg-teal-600 px-5 py-10">
+            <div id="welcome"></div>
             <p>
                 <img src="https://i.pinimg.com/originals/8c/50/72/8c507224d7172b6b4e3e20cdec599235.png" alt="yamilaIMG "
                     width="200" height="200">
             </p>
             <h1 class="uppercase text-white tracking-wide text-2xl  font-bold mt-2">CRUD PRODUCTOS SPRINGBOOT MONGODB
             </h1>
-            <p class="mt-10 text-white">ALUMNES CODO A CODO JAVAFULLSTAC comision 2011</p>
-
-            <p class="mt-10 text-white">Administra tus productos- JSONServer</p>
             <nav class="mt-8">
-                <a href="/"
-                    class="px-3 py-1 text-white block hover:bg-teal-700 hover:text-yellow-400 bg-teal-700">Productos</a>
+                <a href="index.html"
+                    class="px-3 py-1 text-white block hover:bg-teal-700 hover:text-yellow-400">Productos</a>
                 <a href="new-product.html"
-                    class="px-3 py-1 text-white block hover:bg-teal-900 mt-2 hover:text-yellow-400">Nuevo Producto</a>
+                    class="px-3 py-1 text-white block hover:bg-teal-900 mt-2 hover:text-yellow-400 bg-teal-700">Nuevo
+                    Producto</a>
+                <div class="px-3 py-1 text-white block hover:bg-teal-900 mt-2 hover:text-yellow-400" onclick="logout()">
+                    Cerrar Sesión</div>
             </nav>
         </aside>
         <!--sidebar-->
@@ -46,7 +59,8 @@
                                     for="description">Descripcion</label>
                                 <input
                                     class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    id="description" name="description" type="text" placeholder="Descripcion Producto" />
+                                    id="description" name="description" type="text"
+                                    placeholder="Descripcion Producto" />
                             </div>
 
                             <div class="mb-4">
@@ -65,10 +79,11 @@
                             </div>
 
                             <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="amount">Cantidad</label>
+                                <label class="block text-gray-700 text-sm font-bold mb-2"
+                                    for="quantity">Cantidad</label>
                                 <input
                                     class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    id="amount" name="amount" type="number" placeholder="Cantidad Productos" />
+                                    id="quantity" name="quantity" type="number" placeholder="Cantidad Productos" />
                             </div>
 
                             <div class="mb-4">
@@ -79,7 +94,7 @@
                             </div>
                             <input type="submit"
                                 class="bg-teal-600 hover:bg-teal-900 w-full mt-5 p-2 text-white uppercase font-bold"
-                                value="Agregar PRODUCTO" />
+                                value="Agregar Producto" />
                         </form>
                     </div>
                 </div>

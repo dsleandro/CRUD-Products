@@ -1,6 +1,7 @@
 import {  getAllProducts, deleteProduct } from './API.js';
 
 (function () {
+    
     const listado = document.querySelector('#product-list');
 
     document.addEventListener('DOMContentLoaded', showProducts);
@@ -28,7 +29,7 @@ import {  getAllProducts, deleteProduct } from './API.js';
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5">
                     <a class="text-teal-600 hover:text-teal-900 mr-5">Editar</a>
-                    <a href="#" data-product="${id}" class="text-red-600 hover:text-red-900 eliminar">Eliminar</a>
+                    <a href="#" data-product="${id}" class="text-red-600 hover:text-red-900 delete">Eliminar</a>
                 </td>
             `;
 
@@ -37,7 +38,7 @@ import {  getAllProducts, deleteProduct } from './API.js';
     }
 
     function confirmDelete(e) {
-        if (e.target.classList.contains('eliminar')) {
+        if (e.target.classList.contains('delete')) {
             const ProductId = e.target.dataset.product;
 
             const confirmation = confirm('¿Deseas eliminar este producto?');

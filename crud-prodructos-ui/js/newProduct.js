@@ -13,24 +13,20 @@ import { newProduct } from './API.js';
         const description = document.querySelector('#description').value;
         const brand = document.querySelector('#brand').value;
         const price = document.querySelector('#price').value;
-        const amount = document.querySelector('#amount').value;
+        const quantity = document.querySelector('#quantity').value;
         const area = document.querySelector('#area').value;
-
-
-
-
 
         const product = {
             name, 
             description, 
             brand, 
             price, 
-            amount, 
+            quantity, 
             area 
         } ;
 
         if (validate(product)) {
-            showMessage('Todos los campos son obligatorios');
+            showMessage('Todos los campos son obligatorios', e.target.id);
             return;
         }
 
